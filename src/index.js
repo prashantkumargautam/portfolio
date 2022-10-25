@@ -3,6 +3,33 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+const nodemailer = require("nodemailer");
+
+let transporter = nodemailer.createTransport({
+  services: "gmail",
+  auth: {
+    user: "1234@gmail.com",
+    pass:"Testing1234",
+  },
+  tls:{
+    rejectUnauthorized:false,
+  }
+})
+
+let mailOptions = {
+  from: "1234@gmail.com",
+  to: "ankur@gmail.com",
+  subject: "Testing",
+  text: "First Email sent from Nodejs using Nodemailer",
+};
+
+transporter.sendMail(mailOptions, function(err, success){
+  if(err) {
+    console.log(err)
+  } else {
+    console.log("Email sent successfully!")
+  }
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
