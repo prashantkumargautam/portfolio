@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/profile1.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
-import emailjs from 'emailjs-com'
+// import emailjs from 'emailjs-com'
 
 export const Contact = () => {
   const formInitialDetails = {
